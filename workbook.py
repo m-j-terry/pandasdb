@@ -47,7 +47,7 @@ class Item:
         self.unit_price = unit_price
         self.total = units * unit_price
 
-def etract_data():
+def extract_data():
     for corporation in corporate_sheets:
         corporate_sheet = Corporation(corporation.title)
         row = 2
@@ -63,7 +63,7 @@ def etract_data():
                 break ## Test if there is a value to input, else break the loop.
             date_value = corporation[date_column + str(row)].value
             if date_value is not None:
-                date = date_value
+                date = date_value 
             defects_value = corporation[defects_column + str(row)].value
             units_value = corporation[units_column + str(row)].value
             if units_value is None: 
@@ -75,6 +75,4 @@ def etract_data():
             corporate_sheet.add_item(item)
             row += 1
         corporate_dicts.append(corporate_sheet)
-
-etract_data()
-
+    return corporate_dicts
