@@ -31,8 +31,7 @@ def create_totals_table():
         (corporation.name, total_price, corporation.name, total_price)
         )
         conn.commit()
-
-    # # After adding corporations to Grand Totals, calculate grand total of these.
+    ## After adding corporations to Grand Totals, calculate grand total of these.
     cursor.execute('SELECT SUM(total) AS total_price FROM {}'.format(totals_sheet))
     total_price = cursor.fetchone()[0]
     cursor.execute('''
@@ -46,14 +45,13 @@ def create_totals_table():
     ('Grand_Total', total_price))
     conn.commit()
 
-## QUERY TABLES
+## QUERY CORPORATION TABLES
 def create_tables():
     for corporation in corporate_sheets:
         cursor.execute('CREATE TABLE IF NOT EXISTS {} (id SERIAL PRIMARY KEY, date DATE, name VARCHAR(200), defects VARCHAR(125), units INTEGER, price INTEGER, total INTEGER)'.format(corporation.name))
 
         items = corporation.items
         for item in items:
-            # cursor.execute('INSERT INTO ', corporation, '(date, name, defects, units, price, total) SELECT %s, %s, %s, %s, %s, %s WHERE NOT EXISTS ( SELECT 1 FROM, ', corporation.name, ' where date = %s AND name = %s AND price = %s ), (', item.date, ', ', item.name, ', ', item.defects, ', ', item.units, ', ', item.unit_price, ', ', item.total, ')')
             cursor.execute('''
                 INSERT INTO {} (date, name, defects, units, price, total) 
                 SELECT %s, %s, %s, %s, %s, %s 
