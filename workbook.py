@@ -1,4 +1,6 @@
 from openpyxl import load_workbook
+from datetime import datetime
+
 
 wb = load_workbook('Trash.Pandas_ofNYC.xlsx')
 grand_totals = wb['GRAND TOTALS']
@@ -13,7 +15,7 @@ pet_co = wb['PetCo']
 michaels = wb['Michaels']
 party_city = wb['Party City']
 lush = wb['Lush']
-barnes_and_noble = wb['Barnes & Noble']
+barnes_and_noble = wb['Barnes and Noble']
 western_beef = wb['Western Beef']
 rite_aid = wb['Rite Aid']
 target = wb['Target']
@@ -54,7 +56,7 @@ def etract_data():
         defects_column = 'C'
         units_column = 'D'
         unit_price_column = 'E'
-        date
+        date = datetime.today().date()
         while True:
             item_value = corporation[items_column + str(row)].value
             if item_value is None: 
@@ -64,12 +66,15 @@ def etract_data():
                 date = date_value
             defects_value = corporation[defects_column + str(row)].value
             units_value = corporation[units_column + str(row)].value
+            if units_value is None: 
+                units_value = 0
             unit_price_value = corporation[unit_price_column + str(row)].value
+            if unit_price_value is None: 
+                unit_price_value = 0
             item = Item(date, item_value, defects_value, units_value, unit_price_value)
             corporate_sheet.add_item(item)
             row += 1
         corporate_dicts.append(corporate_sheet)
 
-print(corporate_dicts)
-
+etract_data()
 
