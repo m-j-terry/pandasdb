@@ -1,34 +1,34 @@
 from openpyxl import load_workbook
-from datetime import datetime
+from datetime import datetime, date
 
 
 wb = load_workbook('Trash.Pandas_ofNYC.xlsx')
 grand_totals = wb['GRAND TOTALS']
 grand_total = grand_totals['X4'].value
 
-bath_and_bodyworks = wb['Bath and Body Works']
-key_foods = wb['Key Foods']
-cvs = wb['CVS']
-walgreens = wb['Duane Reade']
-pet_smart = wb['PetSmart']
-pet_co = wb['PetCo']
-michaels = wb['Michaels']
-party_city = wb['Party City']
-lush = wb['Lush']
-barnes_and_noble = wb['Barnes and Noble']
-western_beef = wb['Western Beef']
-rite_aid = wb['Rite Aid']
-target = wb['Target']
-marshalls = wb['Marshalls']
-aldi = wb['ALDI']
-big_lots = wb['Big Lots']
-five_below = wb['Five Below']
-face_values = wb['Face Values']
-seven_eleven = wb['Seven Eleven']
-residential_trash_finds = wb['Residential Trash Finds']
-lot_less = wb['Lot Less']
-dollar_tree = wb['Dollar Tree']
-corporate_sheets = [bath_and_bodyworks, key_foods, cvs, walgreens, pet_smart, pet_co, michaels, party_city, lush, barnes_and_noble, western_beef, rite_aid, target, marshalls, aldi, big_lots, five_below, face_values, seven_eleven, residential_trash_finds, lot_less, dollar_tree]
+Bath_and_Body_Works = wb['Bath and Body Works']
+Key_Foods = wb['Key Foods']
+CVS = wb['CVS']
+Walgreens = wb['Duane Reade']
+Pet_Smart = wb['PetSmart']
+Pet_Co = wb['PetCo']
+Michaels = wb['Michaels']
+Party_City = wb['Party City']
+Lush = wb['Lush']
+Barnes_and_Noble = wb['Barnes and Noble']
+Western_Beef = wb['Western Beef']
+Rite_Aid = wb['Rite Aid']
+Target = wb['Target']
+Marshalls = wb['Marshalls']
+Aldi = wb['ALDI']
+Big_Lots = wb['Big Lots']
+Five_Below = wb['Five Below']
+Face_Values = wb['Face Values']
+Seven_Eleven = wb['Seven Eleven']
+Residential_Trash_Finds = wb['Residential Trash Finds']
+Lot_Less = wb['Lot Less']
+Dollar_Tree = wb['Dollar Tree']
+corporate_sheets = [Bath_and_Body_Works, Key_Foods, CVS, Walgreens, Pet_Smart, Pet_Co, Michaels, Party_City, Lush, Barnes_and_Noble, Western_Beef, Rite_Aid, Target, Marshalls, Aldi, Big_Lots, Five_Below, Face_Values, Seven_Eleven, Residential_Trash_Finds, Lot_Less, Dollar_Tree]
 corporate_dicts = []
 
 class Corporation:
@@ -49,29 +49,40 @@ class Item:
 
 def extract_data():
     for corporation in corporate_sheets:
-        corporate_sheet = Corporation(corporation.title)
+        corporate_sheet = Corporation(corporation.title.replace(' ', '_'))
         row = 2
         date_column = 'A'
         items_column = 'B'
         defects_column = 'C'
         units_column = 'D'
         unit_price_column = 'E'
-        date = datetime.today().date()
+        this_date = datetime.today().date()
         while True:
             item_value = corporation[items_column + str(row)].value
             if item_value is None: 
                 break ## Test if there is a value to input, else break the loop.
+            
             date_value = corporation[date_column + str(row)].value
             if date_value is not None:
-                date = date_value 
+                this_date = date_value 
+            # if isinstance(this_date, str) and this_date.strip():
+            if this_date == '':
+                this_date = date(2020, 7, 7)
+
+            
             defects_value = corporation[defects_column + str(row)].value
+            if defects_value is None: 
+                defects_value = ''
+            
             units_value = corporation[units_column + str(row)].value
             if units_value is None: 
                 units_value = 0
+            
             unit_price_value = corporation[unit_price_column + str(row)].value
-            if unit_price_value is None: 
-                unit_price_value = 0
-            item = Item(date, item_value, defects_value, units_value, unit_price_value)
+            if unit_price_value is None or isinstance(unit_price_value, str): 
+                unit_price_value = 1
+            
+            item = Item(this_date, item_value, defects_value, units_value, unit_price_value)
             corporate_sheet.add_item(item)
             row += 1
         corporate_dicts.append(corporate_sheet)
