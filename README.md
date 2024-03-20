@@ -1,12 +1,12 @@
 # Who are we?
  My name is Michael. I am a (former) educator, software developer, writer, and social activist. 
 
- My partner Magdalena and I began a journey in November of 2019. We had been dumpster diving around Brooklyn and Manhattan since 2018 when we decided to create an instagram account to document the quantity (and quality) of all the things we were finding in the trash. Toothpaste. Candy bars. Razors. Feminine hygeine products. Crackers and other dry goods. Holiday goods. And so much more!
+ Magdalena and I had been dumpster diving around Brooklyn and Manhattan for over a year when we decided to create an [instagram account](https://www.instagram.com/trash.pandas_ofnyc/?hl=en) in 2019 to document the quantity (and quality) of all the things we were finding in the trash. Toothpaste. Candy bars. Razors. Pads and tampons. Crackers and dry goods. Pet food and products. Holiday items, decorations and treats. And so much more!
 
  When we made our instagram, I also started a [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQGM2bcNxW9mAuIU95k3llQI_n396jS7gEC-2j7huUvP8ctfU_OlkSygpK2A3uA2kjIphcQX8L_oJ6p/pubhtml) to document the total value of everything we were pulling from the trash—six nights a week, 52 weeks a year!
 
- While we have not posted on our instagram in quite sometime nor have we updated our spreadsheet, the 'data' we collected was monumental. Just the two of us checking a couple of stores' dumpsters each night were able to document over $150,000 of wasted goods in the year and a half we collected data, which was more than our combined income at the time! We didn't sell any of it. We 'redistributed' it out to friends and across our community at work and to our community through neighborhood fridges/pantries and directly off our stoop. 
-
+ While we have not posted on our instagram in quite sometime nor have we updated our spreadsheet since 2021, the 'data' we collected is so valuable. Just the two of us checking a couple of dumpsters each night were able to document over $150,000 of wasted goods in a year and a half, which was more than our combined income at the time! We didn't sell any of it. We 'redistributed' it out to friends/coworkers and to our community through neighborhood fridges/pantries and directly off our stoop. Imagine a world where hundreds of millions of dollars of usable (already created and distributed!) goods were given to those who would use them rather than being sent to the landfill!
+ 
  But if this is the trend for small cornerstore CVS' and Walgreens in the little sliver of New York that we covered each night, imagine this trend magnified across the city, the country, the entire global market. 
 
  Adam Smith, the father of classical economics, theorized that the entire market was guided by an invisible hand that (through aggregating supply to meet demand) could collect all of the bits of local knowledge about demand that are dispersed throughout the economy and transmute them into material prosperity and create the most effecient economic system in human history. 
@@ -33,4 +33,4 @@
 
 Stay tuned for the TrashPandas website!
 To learn more in the meantime, check us out on Instagram!
-![https://www.instagram.com/trash.pandas_ofnyc/?hl=en](https://lh3.googleusercontent.com/proxy/oNTjoYoASVVlr1vNFTgSzwT2EQFTuUJCYnosh07q1rQbeIihL4kfL1_Z23HMD6t4trzV7kL0giLscs3Yehs9HDxj_QJQGE2eRMasjTErFxxn_dHDAaxGWTZWkVropxPm0v9d5ngpPcDfS9BQPMJKiaU0pzKI_nCIOJSDLKB4Oa9K4uLrDIvR)
+[trash.pandas_ofnyc](https://www.instagram.com/trash.pandas_ofnyc/?hl=en)
